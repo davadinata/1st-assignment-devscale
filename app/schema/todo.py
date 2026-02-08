@@ -2,12 +2,12 @@ from datetime import date
 from pydantic import BaseModel
 
 class TodoResponse(BaseModel):
-    title: str | None = None
+    title: str
     desc: str | None = None
-    deadline : date | None = None 
+    deadline : date 
     
 class TodoRequest(BaseModel):
     id: str
-    title: str | None = None
+    title: str
     desc: str | None = None
-    deadline: date | None = None
+    deadline: date 
