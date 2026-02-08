@@ -1,9 +1,12 @@
 from turtle import title
 from scalar_fastapi import get_scalar_api_reference
 from fastapi import FastAPI
+from app.router.todo import todo_router
 
 
 app = FastAPI()
+
+app.include_router(todo_router)
 
 @app.get("/scalar")
 def get_scalar():
