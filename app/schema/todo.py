@@ -1,13 +1,14 @@
 from datetime import date
-from pydantic import BaseModel
+from sqlmodel import SQLModel, Field
+from uuid import UUID
 
-class TodoResponse(BaseModel):
+class TodoResponse(SQLModel):
+    id: UUID
     title: str
     desc: str | None = None
-    deadline : date 
+    deadline: date
     
-class TodoRequest(BaseModel):
-    id: str
-    title: str
-    desc: str | None = None
+class TodoRequest(SQLModel):
+    title: str = Field(max_length=255, min_length=1)
+    desc: str | None = Field(default=None, max_length=1000)
     deadline: date 
