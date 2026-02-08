@@ -26,4 +26,4 @@ def create_todo(todo: TodoRequest,
     db.add(db_todo)
     db.commit()
     db.refresh(db_todo)
-    return db_todo
+    return {"message": "Todo has been created successfully"}
