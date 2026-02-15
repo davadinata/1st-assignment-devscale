@@ -7,6 +7,10 @@ app = FastAPI()
 
 app.include_router(todo_router)
 
+@app.get("/")
+def home():
+    return {"message":"Welcome to todo apps"}
+
 @app.get("/scalar")
 def get_scalar():
     return get_scalar_api_reference(

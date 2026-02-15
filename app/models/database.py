@@ -8,4 +8,3 @@ class Todo(SQLModel, table=True):
     title: str = Field(max_length=255, min_length=1)
     desc: str | None = Field(default=None, max_length=1000)
     deadline: date
-   
